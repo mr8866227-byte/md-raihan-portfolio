@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Md Raihan | Hospitality Professional</title>
+<title>Md Raihan | Professional Portfolio</title>
 <meta name="description" content="Md Raihan - Hospitality, Housekeeping and Guest Services Professional.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +13,13 @@
 
 <style>
 :root {
-    --bg: #07111f;
-    --bg2: #0a1625;
-    --card: #101e30;
-    --card2: #14263a;
+    --bg: #060d18;
+    --bg2: #0a1525;
+    --card: #101d30;
     --cyan: #43d9e8;
     --blue: #2786d9;
-    --white: #f5f8fc;
-    --muted: #a6b5c7;
+    --white: #f5f8ff;
+    --muted: #9baec3;
     --line: rgba(255,255,255,.09);
 }
 
@@ -44,23 +43,21 @@ a {
 
 .container {
     width: 90%;
-    max-width: 1160px;
+    max-width: 1180px;
     margin: auto;
 }
-
-/* NAVIGATION */
 
 header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(7,17,31,.94);
-    backdrop-filter: blur(15px);
+    background: rgba(6,13,24,.94);
+    backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--line);
 }
 
 nav {
-    min-height: 78px;
+    min-height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,21 +65,19 @@ nav {
 }
 
 .logo {
-    font-family: 'Outfit', sans-serif;
-    font-size: 25px;
-    font-weight: 800;
-    color: var(--white);
+    font: 800 25px 'Outfit', sans-serif;
+    color: white;
 }
 
-.logo span {
+.logo span,
+.highlight {
     color: var(--cyan);
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
-    gap: 27px;
     list-style: none;
+    gap: 28px;
 }
 
 .nav-links a {
@@ -100,46 +95,40 @@ nav {
 .hero {
     min-height: 680px;
     display: grid;
-    grid-template-columns: 1.15fr .85fr;
+    grid-template-columns: 1.2fr .8fr;
     align-items: center;
-    gap: 55px;
+    gap: 65px;
     padding-top: 65px;
     padding-bottom: 65px;
 }
 
 .tag {
     display: inline-block;
-    color: var(--cyan);
-    background: rgba(67,217,232,.08);
+    padding: 8px 16px;
     border: 1px solid rgba(67,217,232,.3);
-    padding: 8px 17px;
+    background: rgba(67,217,232,.07);
     border-radius: 30px;
-    font-size: 12px;
-    letter-spacing: 1px;
+    color: var(--cyan);
+    font-size: 11px;
+    letter-spacing: 1.5px;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(45px, 6vw, 75px);
-    line-height: 1.1;
+    font: 800 clamp(43px,6vw,76px)/1.08 'Outfit',sans-serif;
     margin-bottom: 20px;
 }
 
-.hero h1 span {
-    color: var(--cyan);
-}
-
 .hero h2 {
-    font-size: 20px;
-    color: #d9e7f4;
+    font-size: 19px;
     font-weight: 500;
+    color: #d9e6f4;
     margin-bottom: 18px;
 }
 
 .hero p {
-    color: var(--muted);
     max-width: 580px;
+    color: var(--muted);
     margin-bottom: 30px;
 }
 
@@ -159,13 +148,8 @@ nav {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #43d9e8, #2786d9);
+    background: linear-gradient(120deg,var(--cyan),var(--blue));
     color: #06111d;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(67,217,232,.2);
 }
 
 .btn-outline {
@@ -173,93 +157,63 @@ nav {
     color: var(--cyan);
 }
 
-.btn-outline:hover {
-    background: rgba(67,217,232,.1);
-    transform: translateY(-3px);
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(67,217,232,.15);
 }
 
-/* PROFILE PHOTO */
+/* PROFILE */
 
 .hero-photo-wrap {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .photo-glow {
     position: absolute;
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     background: var(--cyan);
-    filter: blur(115px);
+    filter: blur(120px);
     opacity: .17;
-    border-radius: 50%;
 }
 
 .hero-photo {
     position: relative;
     width: 320px;
-    height: 400px;
+    height: 410px;
     object-fit: cover;
-    object-position: center;
-    border-radius: 20px;
-    border: 2px solid rgba(67,217,232,.5);
-    box-shadow: 0 20px 65px rgba(0,0,0,.45);
+    border-radius: 22px;
+    border: 1px solid rgba(67,217,232,.5);
+    box-shadow: 0 25px 70px rgba(0,0,0,.5);
 }
 
 .photo-label {
     position: absolute;
-    bottom: 20px;
-    background: #0b1929;
+    bottom: 18px;
+    background: #101d30;
     border: 1px solid var(--line);
     color: var(--cyan);
-    padding: 10px 16px;
+    padding: 10px 17px;
     border-radius: 8px;
     font-size: 12px;
 }
 
-/* GENERAL SECTIONS */
+/* SECTIONS */
 
-section {
-    padding: 85px 0;
+section:not(.hero) {
+    padding: 90px 0;
 }
 
 .section-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: 38px;
+    font: 700 40px 'Outfit',sans-serif;
     margin-bottom: 10px;
-}
-
-.section-title span {
-    color: var(--cyan);
 }
 
 .section-subtitle {
     color: var(--muted);
     margin-bottom: 35px;
-}
-
-.card {
-    background: linear-gradient(145deg, var(--card), var(--bg2));
-    border: 1px solid var(--line);
-    border-radius: 15px;
-    padding: 28px;
-    transition: .3s;
-}
-
-.card:hover {
-    border-color: rgba(67,217,232,.4);
-    transform: translateY(-4px);
-}
-
-.card p {
-    color: var(--muted);
-}
-
-.card h3 {
-    font-family: 'Outfit', sans-serif;
-    margin-bottom: 12px;
 }
 
 .grid-2 {
@@ -270,23 +224,53 @@ section {
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 30px;
+    background: linear-gradient(145deg,#101e32,#0b1626);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    transition: .35s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(67,217,232,.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,.2);
+}
+
+.card h3 {
+    font: 600 20px 'Outfit',sans-serif;
+    margin-bottom: 14px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
 }
 
 /* ABOUT */
 
 .info-item {
-    padding: 11px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--line);
     color: var(--muted);
+    font-size: 14px;
 }
 
 .info-item strong {
-    color: var(--white);
+    color: white;
 }
 
 /* SKILLS */
+
+.skill-icon {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
 
 .skill-card h3 {
     color: var(--cyan);
@@ -298,7 +282,8 @@ section {
 
 .skill-card li {
     color: var(--muted);
-    padding: 6px 0;
+    font-size: 14px;
+    padding: 5px 0;
 }
 
 .skill-card li::before {
@@ -310,7 +295,7 @@ section {
 
 .experience-list {
     display: grid;
-    gap: 18px;
+    gap: 20px;
 }
 
 .experience-card {
@@ -319,13 +304,13 @@ section {
 
 .experience-label {
     color: var(--cyan);
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
     font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 }
 
-/* WORK VALUES */
+/* VALUES */
 
 .work-card h3 {
     color: var(--cyan);
@@ -335,31 +320,29 @@ section {
 
 .contact-links {
     display: grid;
-    gap: 12px;
+    gap: 13px;
     margin-top: 20px;
 }
 
 .contact-links a {
-    display: block;
-    padding: 13px 16px;
+    padding: 14px 17px;
+    background: linear-gradient(120deg,var(--cyan),var(--blue));
     border-radius: 8px;
-    background: linear-gradient(135deg, #43d9e8, #2786d9);
     color: #06111d;
-    font-weight: 700;
     font-size: 13px;
+    font-weight: 700;
     transition: .3s;
 }
 
 .contact-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(67,217,232,.2);
+    transform: translateX(5px);
 }
 
 /* FOOTER */
 
 footer {
+    padding: 30px 0;
     border-top: 1px solid var(--line);
-    padding: 27px 0;
     text-align: center;
     color: var(--muted);
     font-size: 13px;
@@ -369,9 +352,22 @@ footer span {
     color: var(--cyan);
 }
 
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* MOBILE */
 
-@media(max-width: 800px) {
+@media(max-width:800px) {
     nav {
         flex-direction: column;
         padding: 15px 0;
@@ -380,7 +376,7 @@ footer span {
     .nav-links {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 14px;
+        gap: 15px;
     }
 
     .hero,
@@ -412,13 +408,17 @@ footer span {
     }
 }
 
-@media(max-width: 500px) {
+@media(max-width:500px) {
     .grid-3 {
         grid-template-columns: 1fr;
     }
 
     .section-title {
-        font-size: 30px;
+        font-size: 31px;
+    }
+
+    .nav-links {
+        gap: 11px;
     }
 
     .nav-links a {
@@ -448,302 +448,291 @@ footer span {
 
 <main>
 
-<!-- HOME -->
+<!-- HERO -->
 
 <section class="container hero" id="home">
 
-    <div>
-        <div class="tag">HOSPITALITY PROFESSIONAL</div>
+<div class="reveal">
+    <div class="tag">HOSPITALITY PROFESSIONAL</div>
 
-        <h1>Hello, I'm <span>Md Raihan</span></h1>
+    <h1>Hello, I'm <span class="highlight">Md Raihan</span></h1>
 
-        <h2>Hospitality | Housekeeping | Guest Services</h2>
+    <h2>Hospitality | Housekeeping | Guest Services</h2>
 
-        <p>
-            I am a dedicated hospitality professional with practical
-            experience in housekeeping, hotel operations, guest services,
-            restaurant service and laundry operations. I value teamwork,
-            attention to detail and delivering excellent guest experiences.
-        </p>
+    <p>
+        I am a dedicated hospitality professional with practical
+        experience in housekeeping, hotel operations, guest services,
+        restaurant service and laundry operations. I value teamwork,
+        attention to detail and delivering excellent guest experiences.
+    </p>
 
-        <div class="buttons">
-            <a href="./cv.pdf" class="btn btn-primary" target="_blank" rel="noopener">
-    Download My CV ↓
-</a>
-            </a>
+    <div class="buttons">
+        <a href="./cv.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+            Download My CV ↓
+        </a>
 
-            <a href="#contact" class="btn btn-outline">
-                Contact Me
-            </a>
-        </div>
+        <a href="#contact" class="btn btn-outline">
+            Contact Me
+        </a>
     </div>
+</div>
 
-    <div class="hero-photo-wrap">
-        <div class="photo-glow"></div>
+<div class="hero-photo-wrap reveal">
+    <div class="photo-glow"></div>
 
-        <img src="raihan.jpg"
-             alt="Md Raihan profile photo"
-             class="hero-photo">
+    <img src="raihan.jpg"
+         alt="Md Raihan profile photo"
+         class="hero-photo">
 
-        <div class="photo-label">Open to New Opportunities</div>
-    </div>
+    <div class="photo-label">Open to New Opportunities</div>
+</div>
 
 </section>
 
 <!-- ABOUT -->
 
 <section id="about">
-<div class="container">
+<div class="container reveal">
 
-    <h2 class="section-title">About <span>Me</span></h2>
+<h2 class="section-title">About <span class="highlight">Me</span></h2>
 
-    <p class="section-subtitle">
-        My professional background and personal strengths.
+<p class="section-subtitle">My professional background and strengths.</p>
+
+<div class="grid-2">
+
+<div class="card">
+    <h3>Who I Am</h3>
+
+    <p>
+        I am a hardworking, responsible and adaptable professional
+        with experience in hospitality and customer service.
+        I have worked in different service environments and
+        understand the importance of cleanliness, organization,
+        teamwork and guest satisfaction.
     </p>
 
-    <div class="grid-2">
+    <br>
 
-        <div class="card">
-            <h3>Who I Am</h3>
+    <p>
+        I am always ready to learn, improve my skills and
+        contribute positively to a professional team.
+    </p>
+</div>
 
-            <p>
-                I am a hardworking, responsible and adaptable professional
-                with experience in hospitality and customer service.
-                I have worked in different service environments and
-                understand the importance of cleanliness, organization,
-                teamwork and guest satisfaction.
-            </p>
+<div class="card">
+    <div class="info-item"><strong>Name:</strong> Md Raihan</div>
+    <div class="info-item"><strong>Nationality:</strong> Bangladeshi</div>
+    <div class="info-item"><strong>Profession:</strong> Hospitality</div>
+    <div class="info-item"><strong>Languages:</strong> Bangla, English (Fluent)</div>
+    <div class="info-item"><strong>Work Style:</strong> Responsible & Team-Oriented</div>
+    <div class="info-item"><strong>Availability:</strong> Open to Opportunities</div>
+</div>
 
-            <br>
-
-            <p>
-                I am always ready to learn, improve my skills and
-                contribute positively to a professional team.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="info-item"><strong>Name:</strong> Md Raihan</div>
-            <div class="info-item"><strong>Nationality:</strong> Bangladeshi</div>
-            <div class="info-item"><strong>Profession:</strong> Hospitality</div>
-            <div class="info-item"><strong>Languages:</strong> Bangla, English (Fluent)</div>
-            <div class="info-item"><strong>Work Style:</strong> Responsible & Team-Oriented</div>
-            <div class="info-item"><strong>Availability:</strong> Open to Opportunities</div>
-        </div>
-
-    </div>
+</div>
 </div>
 </section>
 
 <!-- SKILLS -->
 
 <section id="skills">
-<div class="container">
+<div class="container reveal">
 
-    <h2 class="section-title">Professional <span>Skills</span></h2>
+<h2 class="section-title">Professional <span class="highlight">Skills</span></h2>
 
-    <p class="section-subtitle">
-        Practical skills developed through hands-on work experience.
-    </p>
+<p class="section-subtitle">Practical skills developed through hands-on experience.</p>
 
-    <div class="grid-3">
+<div class="grid-3">
 
-        <div class="card skill-card">
-            <h3>Housekeeping</h3>
-            <ul>
-                <li>Guest Room Cleaning</li>
-                <li>Room Preparation</li>
-                <li>Deep Cleaning</li>
-                <li>Bathroom Cleaning</li>
-                <li>Public Area Maintenance</li>
-                <li>Cleaning Standards</li>
-            </ul>
-        </div>
+<div class="card skill-card">
+    <div class="skill-icon">✦</div>
+    <h3>Housekeeping</h3>
+    <ul>
+        <li>Guest Room Cleaning</li>
+        <li>Room Preparation</li>
+        <li>Deep Cleaning</li>
+        <li>Bathroom Cleaning</li>
+        <li>Public Area Maintenance</li>
+        <li>Cleaning Standards</li>
+    </ul>
+</div>
 
-        <div class="card skill-card">
-            <h3>Guest Services</h3>
-            <ul>
-                <li>Guest Assistance</li>
-                <li>Customer Service</li>
-                <li>Guest Communication</li>
-                <li>Team Coordination</li>
-                <li>Problem Solving</li>
-                <li>Professional Conduct</li>
-            </ul>
-        </div>
+<div class="card skill-card">
+    <div class="skill-icon">✦</div>
+    <h3>Guest Services</h3>
+    <ul>
+        <li>Guest Assistance</li>
+        <li>Customer Service</li>
+        <li>Guest Communication</li>
+        <li>Team Coordination</li>
+        <li>Problem Solving</li>
+        <li>Professional Conduct</li>
+    </ul>
+</div>
 
-        <div class="card skill-card">
-            <h3>Operations</h3>
-            <ul>
-                <li>Laundry Operations</li>
-                <li>Restaurant Service</li>
-                <li>Inventory Checking</li>
-                <li>Equipment Organization</li>
-                <li>Daily Operations Support</li>
-                <li>Microsoft Word</li>
-            </ul>
-        </div>
+<div class="card skill-card">
+    <div class="skill-icon">✦</div>
+    <h3>Operations</h3>
+    <ul>
+        <li>Laundry Operations</li>
+        <li>Restaurant Service</li>
+        <li>Inventory Checking</li>
+        <li>Equipment Organization</li>
+        <li>Daily Operations Support</li>
+        <li>Microsoft Word</li>
+    </ul>
+</div>
 
-    </div>
+</div>
 </div>
 </section>
 
 <!-- EXPERIENCE -->
 
 <section id="experience">
-<div class="container">
+<div class="container reveal">
 
-    <h2 class="section-title">Work <span>Experience</span></h2>
+<h2 class="section-title">Work <span class="highlight">Experience</span></h2>
 
-    <p class="section-subtitle">
-        My practical experience across hospitality and service operations.
+<p class="section-subtitle">My practical experience across hospitality and service operations.</p>
+
+<div class="experience-list">
+
+<div class="card experience-card">
+    <div class="experience-label">HOSPITALITY OPERATIONS</div>
+    <h3>Housekeeping & Guesthouse Operations</h3>
+    <p>
+        Experience in guest room cleaning, room preparation,
+        laundry support, deep cleaning and maintaining
+        guesthouse standards.
     </p>
+</div>
 
-    <div class="experience-list">
+<div class="card experience-card">
+    <div class="experience-label">CUSTOMER SERVICE</div>
+    <h3>Restaurant & Guest Services</h3>
+    <p>
+        Experience assisting customers, supporting restaurant
+        operations, maintaining cleanliness and providing
+        friendly service.
+    </p>
+</div>
 
-        <div class="card experience-card">
-            <div class="experience-label">HOSPITALITY OPERATIONS</div>
+<div class="card experience-card">
+    <div class="experience-label">OPERATIONS SUPPORT</div>
+    <h3>Dive Centre & Property Support</h3>
+    <p>
+        Experience organizing equipment, checking supplies,
+        maintaining work areas and assisting with daily
+        operational activities.
+    </p>
+</div>
 
-            <h3>Housekeeping & Guesthouse Operations</h3>
-
-            <p>
-                Experience in guest room cleaning, room preparation,
-                laundry support, deep cleaning and maintaining
-                guesthouse standards.
-            </p>
-        </div>
-
-        <div class="card experience-card">
-            <div class="experience-label">CUSTOMER SERVICE</div>
-
-            <h3>Restaurant & Guest Services</h3>
-
-            <p>
-                Experience assisting customers, supporting restaurant
-                operations, maintaining cleanliness and providing
-                friendly service.
-            </p>
-        </div>
-
-        <div class="card experience-card">
-            <div class="experience-label">OPERATIONS SUPPORT</div>
-
-            <h3>Dive Centre & Property Support</h3>
-
-            <p>
-                Experience organizing equipment, checking supplies,
-                maintaining work areas and assisting with daily
-                operational activities.
-            </p>
-        </div>
-
-    </div>
+</div>
 </div>
 </section>
 
 <!-- WORK VALUES -->
 
 <section id="work">
-<div class="container">
+<div class="container reveal">
 
-    <h2 class="section-title">How I <span>Work</span></h2>
+<h2 class="section-title">How I <span class="highlight">Work</span></h2>
 
-    <p class="section-subtitle">
-        The professional values I bring to every workplace.
-    </p>
+<p class="section-subtitle">The professional values I bring to every workplace.</p>
 
-    <div class="grid-3">
+<div class="grid-3">
 
-        <div class="card work-card">
-            <h3>Responsibility</h3>
-            <p>
-                I take my duties seriously and aim to complete
-                every task properly and on time.
-            </p>
-        </div>
+<div class="card work-card">
+    <h3>Responsibility</h3>
+    <p>I take my duties seriously and aim to complete every task properly and on time.</p>
+</div>
 
-        <div class="card work-card">
-            <h3>Teamwork</h3>
-            <p>
-                I respect colleagues, communicate clearly and
-                support the team whenever needed.
-            </p>
-        </div>
+<div class="card work-card">
+    <h3>Teamwork</h3>
+    <p>I respect colleagues, communicate clearly and support the team whenever needed.</p>
+</div>
 
-        <div class="card work-card">
-            <h3>Quality</h3>
-            <p>
-                I focus on cleanliness, organization and
-                creating a positive guest experience.
-            </p>
-        </div>
+<div class="card work-card">
+    <h3>Quality</h3>
+    <p>I focus on cleanliness, organization and creating a positive guest experience.</p>
+</div>
 
-    </div>
+</div>
 </div>
 </section>
 
 <!-- CONTACT -->
 
 <section id="contact">
-<div class="container">
+<div class="container reveal">
 
-    <h2 class="section-title">Let's <span>Connect</span></h2>
+<h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
 
-    <p class="section-subtitle">
-        Feel free to contact me about professional opportunities.
+<p class="section-subtitle">Feel free to contact me about professional opportunities.</p>
+
+<div class="grid-2">
+
+<div class="card">
+    <h3>Let's Work Together</h3>
+    <p>
+        I am open to suitable opportunities in hotels,
+        guesthouses, housekeeping, guest services and
+        hospitality operations.
+
+        I would be happy to discuss how I can contribute
+        to your team.
     </p>
+</div>
 
-    <div class="grid-2">
+<div class="card">
+    <h3>Contact Information</h3>
 
-        <div class="card">
-            <h3>Let's Work Together</h3>
+    <div class="contact-links">
+        <a href="https://wa.me/8801887641942" target="_blank" rel="noopener">
+            WhatsApp: Contact Me
+        </a>
 
-            <p>
-                I am open to suitable opportunities in hotels,
-                guesthouses, housekeeping, guest services and
-                hospitality operations.
+        <a href="https://www.linkedin.com/in/md-raihan-95330938a" target="_blank" rel="noopener">
+            LinkedIn: View Profile
+        </a>
 
-                I would be happy to discuss how I can contribute
-                to your team.
-            </p>
-        </div>
+        <a href="https://www.facebook.com/raihan.bin.muhammad.dulal" target="_blank" rel="noopener">
+            Facebook: View Profile
+        </a>
 
-        <div class="card">
-            <h3>Contact Information</h3>
-
-            <div class="contact-links">
-
-                <a href="https://wa.me/8801887641942" target="_blank">
-                    WhatsApp: Contact Me
-                </a>
-
-                <a href="https://www.linkedin.com/in/md-raihan-95330938a" target="_blank">
-                    LinkedIn: View Profile
-                </a>
-
-                <a href="https://www.facebook.com/raihan.bin.muhammad.dulal" target="_blank">
-                    Facebook: View Profile
-                </a>
-
-                <a href="cv.pdf" target="_blank">
-                    View My CV
-                </a>
-
-            </div>
-        </div>
-
+        <a href="./cv.pdf" target="_blank" rel="noopener">
+            View My CV
+        </a>
     </div>
+</div>
+
+</div>
 </div>
 </section>
 
 </main>
 
 <footer>
-    <div class="container">
-        <p>© 2026 <span>Md Raihan</span>. All Rights Reserved.</p>
-        <p>Hospitality Professional | Housekeeping | Guest Services</p>
-    </div>
+<div class="container">
+    <p>© 2026 <span>Md Raihan</span>. All Rights Reserved.</p>
+    <p>Hospitality Professional | Housekeeping | Guest Services</p>
+</div>
 </footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+    observer.observe(element);
+});
+</script>
 
 </body>
 </html>
