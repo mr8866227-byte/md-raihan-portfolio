@@ -54,7 +54,7 @@ a {
 
 section {
     padding: 95px 0;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 85px;
 }
 
 .section-title {
@@ -106,18 +106,24 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
     list-style: none;
 }
 
 .nav-links a {
     color: var(--muted);
     font-size: 14px;
+    padding: 8px 0;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--cyan);
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--cyan);
 }
 
 .menu-toggle {
@@ -125,7 +131,7 @@ header {
     border: 1px solid var(--border);
     background: var(--card);
     color: var(--cyan);
-    padding: 9px 13px;
+    padding: 8px 13px;
     border-radius: 8px;
     font-size: 22px;
     cursor: pointer;
@@ -224,7 +230,9 @@ header {
 
 /* ABOUT */
 
-.about {
+.about,
+.languages,
+.approach {
     background: var(--bg2);
 }
 
@@ -277,10 +285,6 @@ header {
 }
 
 /* LANGUAGES */
-
-.languages {
-    background: var(--bg2);
-}
 
 .language-grid {
     display: grid;
@@ -341,11 +345,7 @@ header {
     font-size: 15px;
 }
 
-/* WORK APPROACH */
-
-.approach {
-    background: var(--bg2);
-}
+/* APPROACH */
 
 .approach-content {
     max-width: 850px;
@@ -392,6 +392,39 @@ header {
     color: #06111e;
 }
 
+/* BACK TO TOP */
+
+#backToTop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--cyan), var(--blue));
+    color: #07111f;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(67,217,232,0.25);
+}
+
 /* FOOTER */
 
 footer {
@@ -403,7 +436,7 @@ footer {
     font-size: 13px;
 }
 
-/* ANIMATION */
+/* SCROLL ANIMATION */
 
 .reveal {
     opacity: 0;
@@ -416,12 +449,15 @@ footer {
     transform: translateY(0);
 }
 
-a:focus-visible, button:focus-visible {
+/* ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
     outline: 2px solid var(--cyan);
     outline-offset: 4px;
 }
 
-/* MOBILE */
+/* MOBILE RESPONSIVE */
 
 @media (max-width: 768px) {
     section {
@@ -456,9 +492,16 @@ a:focus-visible, button:focus-visible {
         display: flex;
     }
 
-    .nav-links li a {
+    .nav-links a {
         display: block;
         padding: 12px 8px;
+    }
+
+    .nav-links a.active {
+        background: rgba(67,217,232,0.08);
+        border-bottom: none;
+        border-left: 3px solid var(--cyan);
+        padding-left: 14px;
     }
 
     .hero {
@@ -513,6 +556,13 @@ a:focus-visible, button:focus-visible {
         padding: 12px 16px;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 </style>
 </head>
 
@@ -559,11 +609,15 @@ a:focus-visible, button:focus-visible {
             </p>
 
             <div class="hero-buttons">
-                <a href="https://wa.me/8801887641942" class="btn btn-primary" target="_blank" rel="noopener">
+                <a href="https://wa.me/8801887641942"
+                   class="btn btn-primary"
+                   target="_blank" rel="noopener">
                     Contact Me on WhatsApp
                 </a>
 
-                <a href="./cv.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+                <a href="./cv.pdf"
+                   class="btn btn-outline"
+                   target="_blank" rel="noopener">
                     Download My CV
                 </a>
             </div>
@@ -644,7 +698,7 @@ a:focus-visible, button:focus-visible {
             <div class="skill-card reveal">
                 <div class="icon">💻</div>
                 <h3>Computer Skills</h3>
-                <p>Microsoft Word and basic digital document handling.</p>
+                <p>Microsoft Word and digital document handling.</p>
             </div>
         </div>
     </div>
@@ -756,8 +810,7 @@ a:focus-visible, button:focus-visible {
 
             <a href="https://wa.me/8801887641942"
                class="btn btn-primary"
-               target="_blank"
-               rel="noopener">
+               target="_blank" rel="noopener">
                 Contact Me on WhatsApp
             </a>
 
@@ -776,6 +829,12 @@ a:focus-visible, button:focus-visible {
 
 </main>
 
+<button id="backToTop"
+        aria-label="Back to top"
+        title="Back to top">
+    ↑
+</button>
+
 <footer>
     <div class="container">
         <p>© 2026 Md Raihan. All Rights Reserved.</p>
@@ -784,7 +843,7 @@ a:focus-visible, button:focus-visible {
 </footer>
 
 <script>
-// Mobile navigation menu
+// Mobile Navigation
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
@@ -792,14 +851,14 @@ menuToggle.addEventListener("click", function () {
     const isOpen = navLinks.classList.toggle("open");
 
     menuToggle.textContent = isOpen ? "✕" : "☰";
-    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
     menuToggle.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"
     );
 });
 
-// Close menu after selecting a navigation link
+// Close mobile menu after clicking a link
 document.querySelectorAll("#navLinks a").forEach(function (link) {
     link.addEventListener("click", function () {
         navLinks.classList.remove("open");
@@ -809,12 +868,22 @@ document.querySelectorAll("#navLinks a").forEach(function (link) {
     });
 });
 
-// Reveal animation while scrolling
-const observer = new IntersectionObserver(function (entries) {
+// Close menu with Escape key
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+});
+
+// Scroll Reveal Animation
+const revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
         }
     });
 }, {
@@ -822,7 +891,48 @@ const observer = new IntersectionObserver(function (entries) {
 });
 
 document.querySelectorAll(".reveal").forEach(function (element) {
-    observer.observe(element);
+    revealObserver.observe(element);
+});
+
+// Back to Top Button
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+}, { passive: true });
+
+backToTop.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+// Active Navigation Highlight
+const sections = document.querySelectorAll("main section[id]");
+const navItems = document.querySelectorAll("#navLinks a");
+
+const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            navItems.forEach(function (link) {
+                const isActive =
+                    link.getAttribute("href") === "#" + entry.target.id;
+
+                link.classList.toggle("active", isActive);
+            });
+        }
+    });
+}, {
+    rootMargin: "-30% 0px -60% 0px"
+});
+
+sections.forEach(function (section) {
+    sectionObserver.observe(section);
 });
 </script>
 
